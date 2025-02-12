@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper/on_genrate_funcation.dart';
-import 'package:fruits_hub/features/presentation/views/splash_view.dart';
+import 'package:fruits_hub/features/Splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(const FruitsHub());
