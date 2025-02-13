@@ -59,6 +59,11 @@ class S {
   String get title {
     return Intl.message('Welcome To You', name: 'title', desc: '', args: []);
   }
+
+  /// `skip`
+  String get skip {
+    return Intl.message('skip', name: 'skip', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

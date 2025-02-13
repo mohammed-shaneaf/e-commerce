@@ -13,33 +13,39 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
-    executeNavigation();
     super.initState();
+    executeNavigation();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SvgPicture.asset(Assets.imagesPlant),
-          ],
-        ),
-        SvgPicture.asset(Assets.imagesLogo),
-        SvgPicture.asset(
-          Assets.imagesSplashButton,
-          fit: BoxFit.fill,
-        ),
-      ],
+    // IDentify The Diercation of the app based on langauge
+    bool isRtl = Directionality.of(context) == TextDirection.rtl;
+
+    return Directionality(
+      textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            mainAxisAlignment: isRtl ? MainAxisAlignment.end : MainAxisAlignment.start,
+            children: [
+              SvgPicture.asset(Assets.imagesPlant),
+            ],
+          ),
+          SvgPicture.asset(Assets.imagesLogo),
+          SvgPicture.asset(
+            Assets.imagesSplashButton,
+            fit: BoxFit.fill,
+          ),
+        ],
+      ),
     );
   }
 
   void executeNavigation() {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
     });
   }
