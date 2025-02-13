@@ -64,6 +64,16 @@ class S {
   String get skip {
     return Intl.message('skip', name: 'skip', desc: '', args: []);
   }
+
+  /// `search and shop`
+  String get searchAndShop {
+    return Intl.message(
+      'search and shop',
+      name: 'searchAndShop',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

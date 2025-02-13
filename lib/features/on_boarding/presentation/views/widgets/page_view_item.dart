@@ -30,8 +30,25 @@ class PageViewItem extends StatelessWidget {
                 bottom: 0,
                 child: SvgPicture.asset(image),
               ),
-              Text(S.of(context).skip),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(S.of(context).skip),
+              ),
             ],
+          ),
+        ),
+        const SizedBox(
+          height: 64,
+        ),
+        title,
+        const SizedBox(
+          height: 24,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Text(
+            subTitle,
+            textAlign: TextAlign.center,
           ),
         ),
       ],
