@@ -74,6 +74,11 @@ class S {
       args: [],
     );
   }
+
+  /// `StartNow`
+  String get StartNow {
+    return Intl.message('StartNow', name: 'StartNow', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
