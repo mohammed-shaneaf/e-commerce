@@ -40,7 +40,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     return Column(
       children: [
         Expanded(
-          child: OnBoardingPageView(),
+          child: OnBoardingPageView(
+            pageController: pageController,
+          ),
         ),
         DotsIndicator(
           dotsCount: 2,

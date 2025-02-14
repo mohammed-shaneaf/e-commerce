@@ -4,10 +4,16 @@ import 'package:fruits_hub/generated/l10n.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem(
-      {super.key, required this.image, required this.backGroundImage, required this.title, required this.subTitle});
+      {super.key,
+      required this.image,
+      required this.backGroundImage,
+      required this.title,
+      required this.subTitle,
+      required this.isVisable});
   final String image, backGroundImage;
   final Widget title;
   final String subTitle;
+  final bool isVisable;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +36,12 @@ class PageViewItem extends StatelessWidget {
                 bottom: 0,
                 child: SvgPicture.asset(image),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(S.of(context).skip),
+              Visibility(
+                visible: isVisable,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(S.of(context).skip),
+                ),
               ),
             ],
           ),

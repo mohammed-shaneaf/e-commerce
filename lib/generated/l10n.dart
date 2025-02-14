@@ -79,6 +79,26 @@ class S {
   String get StartNow {
     return Intl.message('StartNow', name: 'StartNow', desc: '', args: []);
   }
+
+  /// `Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality`
+  String get OnBoardingSubTitle1 {
+    return Intl.message(
+      'Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality',
+      name: 'OnBoardingSubTitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.`
+  String get OnBoradingSubTitle2 {
+    return Intl.message(
+      'We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.',
+      name: 'OnBoradingSubTitle2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
