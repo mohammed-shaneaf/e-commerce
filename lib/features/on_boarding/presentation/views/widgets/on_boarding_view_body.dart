@@ -24,6 +24,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     pageController.addListener(() {
       print('Current Page :${currentPage} ');
       currentPage = pageController.page!.round(); // page (double ) i trasnfomed to int -> (round)
+      setState(() {});
     });
     super.initState();
   }
@@ -48,14 +49,20 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           dotsCount: 2,
           decorator: DotsDecorator(
             activeColor: AppColor.primaryColor,
-            color: AppColor.primaryColor.withValues(alpha: .5),
+            color: currentPage == 1 ? AppColor.primaryColor : AppColor.primaryColor.withValues(alpha: .5),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kPadding, vertical: 43),
-          child: CustomButton(
-            onPressed: () {},
-            text: S.of(context).StartNow,
+        Visibility(
+          maintainSize: true,
+          maintainAnimation: true,
+          maintainState: true,
+          visible: currentPage == 1 ? true : false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kPadding, vertical: 43),
+            child: CustomButton(
+              onPressed: () {},
+              text: S.of(context).StartNow,
+            ),
           ),
         ),
       ],
