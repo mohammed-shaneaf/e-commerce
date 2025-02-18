@@ -17,6 +17,9 @@ class FruitsHub extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(812, 375),
       child: MaterialApp(
+        theme: ThemeData(
+          fontFamily: 'Cairo',
+        ),
         locale: Locale('ar'),
         localizationsDelegates: [
           S.delegate,

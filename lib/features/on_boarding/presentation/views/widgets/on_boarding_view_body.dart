@@ -1,7 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/constant.dart';
-import 'package:fruits_hub/core/utils/app_color.dart';
+
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:fruits_hub/generated/l10n.dart';
@@ -22,7 +23,6 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
   void initState() {
     pageController = PageController();
     pageController.addListener(() {
-      print('Current Page :${currentPage} ');
       currentPage = pageController.page!.round(); // page (double ) i trasnfomed to int -> (round)
       setState(() {});
     });
@@ -48,8 +48,8 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
-            activeColor: AppColor.primaryColor,
-            color: currentPage == 1 ? AppColor.primaryColor : AppColor.primaryColor.withValues(alpha: .5),
+            activeColor: AppColors.primaryColor,
+            color: currentPage == 1 ? AppColors.primaryColor : AppColors.primaryColor.withValues(alpha: .5),
           ),
         ),
         Visibility(
@@ -58,7 +58,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           maintainState: true,
           visible: currentPage == 1 ? true : false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kPadding, vertical: 43),
+            padding: const EdgeInsets.symmetric(horizontal: kPadding, vertical: 20),
             child: CustomButton(
               onPressed: () {},
               text: S.of(context).StartNow,

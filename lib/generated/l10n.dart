@@ -91,10 +91,10 @@ class S {
   }
 
   /// `We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.`
-  String get OnBoradingSubTitle2 {
+  String get OnBoradingSubTitle {
     return Intl.message(
       'We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.',
-      name: 'OnBoradingSubTitle2',
+      name: 'OnBoradingSubTitle',
       desc: '',
       args: [],
     );

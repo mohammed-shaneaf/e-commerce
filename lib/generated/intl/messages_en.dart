@@ -25,7 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnBoardingSubTitle1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality",
     ),
-    "OnBoradingSubTitle2": MessageLookupByLibrary.simpleMessage(
+    "OnBoradingSubTitle": MessageLookupByLibrary.simpleMessage(
       "We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.",
     ),
     "StartNow": MessageLookupByLibrary.simpleMessage("StartNow"),
