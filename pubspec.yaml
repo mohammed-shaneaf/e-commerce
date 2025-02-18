@@ -9,22 +9,22 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  cupertino_icons: ^1.0.8
+  dots_indicator: ^4.0.0
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.8
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.17
-  dots_indicator: ^4.0.0
   flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.17
+  shared_preferences: ^2.5.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
 
   flutter_lints: ^5.0.0
-  flutter_launcher_icons: ^0.13.1
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true

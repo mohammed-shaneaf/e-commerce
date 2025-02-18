@@ -21,7 +21,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
       controller: widget.pageController,
       children: [
         PageViewItem(
-          isVisable: widget.pageController.hasClients ? (widget.pageController.page ?? 0).round() == 0 : true,
+          isVisable: true,
           image: Assets.imagesPageViewItem1Image,
           backGroundImage: Assets.imagesPageViewItem1BackgroundImage,
           title: Row(
@@ -45,7 +45,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
           subTitle: S.of(context).OnBoardingSubTitle1,
         ),
         PageViewItem(
-          isVisable: widget.pageController.hasClients ? (widget.pageController.page ?? 0).round() != 0 : false,
+          isVisable: false,
           image: Assets.imagesPageViewItem2Image,
           backGroundImage: Assets.imagesPageViewItem2Backgroundimage,
           title: Row(
@@ -58,7 +58,7 @@ class _OnBoardingPageViewState extends State<OnBoardingPageView> {
               ),
             ],
           ),
-          subTitle: S.of(context).OnBoradingSubTitle,
+          subTitle: 'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثاية',
         )
       ],
     );
