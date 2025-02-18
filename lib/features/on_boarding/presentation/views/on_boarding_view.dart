@@ -11,5 +11,5 @@ class OnBoardingView extends StatelessWidget {
         child: OnBoardingViewBody(),
       ),
     );
-  }
+  }  
 }
