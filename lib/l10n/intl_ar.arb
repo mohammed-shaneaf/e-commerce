@@ -7,5 +7,14 @@
      "OnBoardingSubTitle" : "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييم",
      "Login" : "تسجيل الدخول",
      "Email" : "البريد الإلكتروني",
-      "Password" : "كلمة المرور"
+     "Password" : "كلمة المرور",
+     "ForgetYourPassword" : "نسيت كلمة المرور ؟",
+     "DoNotHaveAnAccount" : "لا تمتلك حساب ؟",
+     "CreateAnAccount"  : "قم بإنشاء حساب",
+     "Or" : "أو",
+    "SignInWithGoogle" : "تسجيل بواسطة جوجل",
+    "SignInWithApple" : "تسجيل بواسطة أبل", 
+    "SignInWithFecebook" : "تسجيل بواسطة فيسبوك"
+
+
 }    

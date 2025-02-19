@@ -7,7 +7,15 @@
     "OnBoradingSubTitle" : "We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.",
     "Login" : "Login",
     "Email" : "Email",
-    "Password" : "Password"
+    "Password" : "Password",
+    "ForgetYourPassword" : "ForgetYourPassword ?",
+    "DoNotHaveAnAccount" : "Do Not Have An Account ?",
+    "CreateAnAccount" : "Create An Account",
+    "Or" : "Or",
+    "SignInWithGoogle" : "SignInWithGoogle",
+    "SignInWithApple" : "SignInWithApple", 
+    "SignInWithFecebook" : "SignInWithFecebook"
+
     
 
     

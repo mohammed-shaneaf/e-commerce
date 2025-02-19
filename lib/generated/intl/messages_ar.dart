@@ -22,12 +22,27 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "CreateAnAccount": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
+    "DoNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "لا تمتلك حساب ؟",
+    ),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "ForgetYourPassword": MessageLookupByLibrary.simpleMessage(
+      "نسيت كلمة المرور ؟",
+    ),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "OnBoardingSubTitle1": MessageLookupByLibrary.simpleMessage(
       "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
     ),
+    "Or": MessageLookupByLibrary.simpleMessage("أو"),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "SignInWithApple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
+    "SignInWithFecebook": MessageLookupByLibrary.simpleMessage(
+      "تسجيل بواسطة فيسبوك",
+    ),
+    "SignInWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "تسجيل بواسطة جوجل",
+    ),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),

@@ -114,6 +114,71 @@ class S {
   String get Password {
     return Intl.message('Password', name: 'Password', desc: '', args: []);
   }
+
+  /// `ForgetYourPassword ?`
+  String get ForgetYourPassword {
+    return Intl.message(
+      'ForgetYourPassword ?',
+      name: 'ForgetYourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do Not Have An Account ?`
+  String get DoNotHaveAnAccount {
+    return Intl.message(
+      'Do Not Have An Account ?',
+      name: 'DoNotHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create An Account`
+  String get CreateAnAccount {
+    return Intl.message(
+      'Create An Account',
+      name: 'CreateAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get Or {
+    return Intl.message('Or', name: 'Or', desc: '', args: []);
+  }
+
+  /// `SignInWithGoogle`
+  String get SignInWithGoogle {
+    return Intl.message(
+      'SignInWithGoogle',
+      name: 'SignInWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SignInWithApple`
+  String get SignInWithApple {
+    return Intl.message(
+      'SignInWithApple',
+      name: 'SignInWithApple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SignInWithFecebook`
+  String get SignInWithFecebook {
+    return Intl.message(
+      'SignInWithFecebook',
+      name: 'SignInWithFecebook',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
