@@ -2,10 +2,18 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
-import 'package:fruits_hub/generated/l10n.dart';
 
 class AuthFooter extends StatelessWidget {
-  const AuthFooter({super.key});
+  final String primaryText;
+  final String actionText;
+  final VoidCallback onActionTap;
+
+  const AuthFooter({
+    super.key,
+    required this.primaryText,
+    required this.actionText,
+    required this.onActionTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +21,13 @@ class AuthFooter extends StatelessWidget {
 
     return RichText(
       text: TextSpan(
-        text: S.of(context).DoNotHaveAnAccount,
-        style: AppTextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
+        text: primaryText,
+        style: AppTextStyles.semiBold16.copyWith(color: const Color(0xff949D9E)),
         children: [
           TextSpan(
-            text: " ${S.of(context).CreateAnAccount}",
+            text: " $actionText",
             style: AppTextStyles.semiBold16.copyWith(color: AppColors.lightPrimaryColor),
-            recognizer: TapGestureRecognizer()..onTap = () {
-              // اضف هنا التنقل إلى شاشة التسجيل
-            },
+            recognizer: TapGestureRecognizer()..onTap = onActionTap,
           ),
         ],
       ),

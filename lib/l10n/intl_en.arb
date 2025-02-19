@@ -14,7 +14,13 @@
     "Or" : "Or",
     "SignInWithGoogle" : "SignInWithGoogle",
     "SignInWithApple" : "SignInWithApple", 
-    "SignInWithFecebook" : "SignInWithFecebook"
+    "SignInWithFecebook" : "SignInWithFecebook",
+    "FullName" : "Full Name",
+    "NewAccount" : "Create New Account",
+    "CreateNewAccount" : "Create New Account",
+    "YoualreadyhaveAnAccount" : "You already Have An Account ?",
+    "Bycreatinganaccountyouagreeto" : "By creating an accountyou agree to ",
+    "OurTermsandConditions" : " Our Terms and Conditions"
 
     
 

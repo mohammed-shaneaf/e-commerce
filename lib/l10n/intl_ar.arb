@@ -14,7 +14,12 @@
      "Or" : "أو",
     "SignInWithGoogle" : "تسجيل بواسطة جوجل",
     "SignInWithApple" : "تسجيل بواسطة أبل", 
-    "SignInWithFecebook" : "تسجيل بواسطة فيسبوك"
-
+    "SignInWithFecebook" : "تسجيل بواسطة فيسبوك",
+    "FullName" : "الاسم كامل",
+    "NewAccount" : "حساب جديد",
+    "CreateNewAccount" : "إنشاء حساب جديد",
+    "YoualreadyhaveAnAccount" : " تمتلك حساب بالفعل؟",
+    "Bycreatinganaccountyouagreeto" : "  من خلال إنشاء حساب فإنك توافق على" ,
+    "OurTermsandConditions" : "الشروط والأحكام الخاصة بنا  "
 
 }    

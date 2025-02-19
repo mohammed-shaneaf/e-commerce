@@ -22,7 +22,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Bycreatinganaccountyouagreeto": MessageLookupByLibrary.simpleMessage(
+      "  من خلال إنشاء حساب فإنك توافق على",
+    ),
     "CreateAnAccount": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
+    "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "DoNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب ؟",
     ),
@@ -30,11 +34,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "ForgetYourPassword": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور ؟",
     ),
+    "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "NewAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
     "OnBoardingSubTitle1": MessageLookupByLibrary.simpleMessage(
       "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
     ),
     "Or": MessageLookupByLibrary.simpleMessage("أو"),
+    "OurTermsandConditions": MessageLookupByLibrary.simpleMessage(
+      "الشروط والأحكام الخاصة بنا  ",
+    ),
     "Password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "SignInWithApple": MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
     "SignInWithFecebook": MessageLookupByLibrary.simpleMessage(
@@ -44,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل بواسطة جوجل",
     ),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+    "YoualreadyhaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      " تمتلك حساب بالفعل؟",
+    ),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "title": MessageLookupByLibrary.simpleMessage("مرحبا بك في"),

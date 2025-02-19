@@ -22,8 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Bycreatinganaccountyouagreeto": MessageLookupByLibrary.simpleMessage(
+      "By creating an accountyou agree to ",
+    ),
     "CreateAnAccount": MessageLookupByLibrary.simpleMessage(
       "Create An Account",
+    ),
+    "CreateNewAccount": MessageLookupByLibrary.simpleMessage(
+      "Create New Account",
     ),
     "DoNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Do Not Have An Account ?",
@@ -32,7 +38,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ForgetYourPassword": MessageLookupByLibrary.simpleMessage(
       "ForgetYourPassword ?",
     ),
+    "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "NewAccount": MessageLookupByLibrary.simpleMessage("Create New Account"),
     "OnBoardingSubTitle1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality",
     ),
@@ -40,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.",
     ),
     "Or": MessageLookupByLibrary.simpleMessage("Or"),
+    "OurTermsandConditions": MessageLookupByLibrary.simpleMessage(
+      " Our Terms and Conditions",
+    ),
     "Password": MessageLookupByLibrary.simpleMessage("Password"),
     "SignInWithApple": MessageLookupByLibrary.simpleMessage("SignInWithApple"),
     "SignInWithFecebook": MessageLookupByLibrary.simpleMessage(
@@ -49,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "SignInWithGoogle",
     ),
     "StartNow": MessageLookupByLibrary.simpleMessage("StartNow"),
+    "YoualreadyhaveAnAccount": MessageLookupByLibrary.simpleMessage(
+      "You already Have An Account ?",
+    ),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("search and shop"),
     "skip": MessageLookupByLibrary.simpleMessage("skip"),
     "title": MessageLookupByLibrary.simpleMessage("Welcome To You"),
