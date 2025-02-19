@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_appbar.dart';
+import 'package:fruits_hub/features/Auth/presentation/views/widgets/login_view_body.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class LoginView extends StatelessWidget {
@@ -11,6 +12,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context, S.of(context).Login),
+      body: SafeArea(child: LoginViewBody()),
     );
   }
 }

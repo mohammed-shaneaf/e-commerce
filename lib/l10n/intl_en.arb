@@ -5,6 +5,10 @@
     "StartNow" : "StartNow",
     "OnBoardingSubTitle1" : "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality",
     "OnBoradingSubTitle" : "We offer you the best carefully selected fruits. Check out the details, photos and reviews to make sure you choose the perfect fruit.",
-    "Login" : "Login"
+    "Login" : "Login",
+    "Email" : "Email",
+    "Password" : "Password"
+    
+
     
 }

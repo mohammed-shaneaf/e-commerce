@@ -59,7 +59,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           maintainState: true,
           visible: currentPage == 1 ? true : false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kPadding, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: kPadding1, vertical: 20),
             child: CustomButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, LoginView.routeName);

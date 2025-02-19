@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/helper/on_genrate_funcation.dart';
 import 'package:fruits_hub/core/services/shared_prefernces_singleton.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/features/Splash/presentation/views/splash_view.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -22,6 +23,8 @@ class FruitsHub extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(
           fontFamily: 'Cairo',
+          scaffoldBackgroundColor: Colors.white,
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
         ),
         locale: Locale('ar'),
         localizationsDelegates: [
