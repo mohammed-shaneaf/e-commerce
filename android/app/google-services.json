@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774965574022",
+    "project_id": "fruits-hub-e-commerce",
+    "storage_bucket": "fruits-hub-e-commerce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774965574022:android:3a59c2cc7f490e649bd407",
+        "android_client_info": {
+          "package_name": "com.example.fruits_hub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXmmrOuwCfZR1UMMgQUXCah8dAoFpGO84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
