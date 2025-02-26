@@ -1,6 +1,6 @@
 // Represnt Data Of The User Regardless Of What Api You Are Use (Services)
 
-class UserEntity {
+class  UserEntity {
   final String name;
   final String email;
   final String uId;
