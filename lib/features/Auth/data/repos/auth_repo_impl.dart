@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruits_hub/core/errors/custom_throw_exceptions_firebase.dart';
+import 'package:fruits_hub/core/errors/custom_auth_exceptions_firebase.dart';
 import 'package:fruits_hub/core/errors/faliure.dart';
 import 'package:fruits_hub/core/services/firebase_auth_services.dart';
 import 'package:fruits_hub/features/Auth/data/models/user_model.dart';
