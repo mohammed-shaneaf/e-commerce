@@ -6,11 +6,32 @@ import 'package:fruits_hub/features/Auth/presentation/views/widgets/auth_footer.
 import 'package:fruits_hub/features/Auth/presentation/views/widgets/auth_social_buttons.dart';
 import 'package:fruits_hub/features/Auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:fruits_hub/features/Auth/presentation/views/widgets/forget_password_text.dart';
-
 import 'package:fruits_hub/generated/l10n.dart';
 
-class LoginViewBody extends StatelessWidget {
+class LoginViewBody extends StatefulWidget {
   const LoginViewBody({super.key});
+
+  @override
+  State<LoginViewBody> createState() => _LoginViewBodyState();
+}
+
+class _LoginViewBodyState extends State<LoginViewBody> {
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+
+  @override
+  void initState() {
+    super.initState();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +41,10 @@ class LoginViewBody extends StatelessWidget {
         child: Column(
           children: [
             24.verticalSpace,
-            const AuthTextFields(),
+            AuthTextFields(
+              passwordController: passwordController,
+              emailController: emailController,
+            ),
             16.verticalSpace,
             const ForgotPasswordText(),
             33.verticalSpace,

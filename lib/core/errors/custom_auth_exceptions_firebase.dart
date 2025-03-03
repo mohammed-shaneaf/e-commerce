@@ -9,17 +9,17 @@ class CustomAuthException implements Exception {
   static CustomAuthException fromFirebaseAuthException(String errorCode) {
     switch (errorCode) {
       case 'email-already-in-use':
-        return CustomAuthException("The email is already in use.");
+        return CustomAuthException("البريد الإلكتروني مستخدم بالفعل.");
       case 'invalid-email':
-        return CustomAuthException("Invalid email format.");
+        return CustomAuthException("تنسيق البريد الإلكتروني غير صالح.");
       case 'weak-password':
-        return CustomAuthException("Password is too weak.");
+        return CustomAuthException("كلمة المرور ضعيفة جدًا.");
       case 'operation-not-allowed':
-        return CustomAuthException("Email/password sign-up is disabled.");
+        return CustomAuthException("تسجيل الدخول بالبريد الإلكتروني/كلمة المرور معطل.");
       case 'user-disabled':
-        return CustomAuthException("This user has been disabled.");
+        return CustomAuthException("تم تعطيل هذا الحساب.");
       default:
-        return CustomAuthException("An unknown error occurred.");
+        return CustomAuthException("حدث خطأ غير معروف.");
     }
   }
 }
