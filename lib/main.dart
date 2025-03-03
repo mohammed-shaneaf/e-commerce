@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/helper/on_genrate_funcation.dart';
+import 'package:fruits_hub/core/services/custom_bloc_observer.dart';
 import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/services/shared_prefernces_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
@@ -12,6 +14,7 @@ import 'package:fruits_hub/generated/l10n.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = CustomBlocObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await SharedPreferncesSingleton.init();
   setupGetIt();
@@ -22,12 +25,11 @@ class FruitsHub extends StatelessWidget {
   const FruitsHub({super.key});
 
   @override
-/*************  ✨ Codeium Command ⭐  *************/
+
   /// Builds the main widget tree for the FruitsHub app.
   ///
   /// This method initializes the `ScreenUtil` with a design size and returns
   /// a `MaterialApp` configured with the app's theme, locale, localization
-/******  4b9b41a9-88b7-4ac5-9b14-7310366055d7  *******/
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(812, 375),
