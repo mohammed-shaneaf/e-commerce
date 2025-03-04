@@ -3,17 +3,25 @@ import 'package:fruits_hub/core/utils/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
-      {super.key, required this.textInputType, required this.hintText, this.suffixIcon, this.onSaved, this.controller});
+      {super.key,
+      required this.textInputType,
+      required this.hintText,
+      this.suffixIcon,
+      this.onSaved,
+      this.controller,
+      this.obscureText = false});
 
   final TextInputType textInputType;
   final String hintText;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
   final TextEditingController? controller;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       controller: controller,
       onSaved: onSaved,
       validator: (value) {

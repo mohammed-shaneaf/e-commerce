@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruits_hub/core/utils/widgets/custom_password_field.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_text_form_field.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -23,18 +24,7 @@ class AuthTextFields extends StatelessWidget {
           textInputType: TextInputType.emailAddress,
         ),
         16.verticalSpace,
-        CustomTextFormField(
-          controller: passwordController,
-          hintText: S.of(context).Password,
-          textInputType: TextInputType.visiblePassword,
-          suffixIcon: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 31.w),
-            child: const Icon(
-              Icons.remove_red_eye,
-              color: Color(0xffC9CECF),
-            ),
-          ),
-        ),
+        PasswordField(passwordController: passwordController),
       ],
     );
   }
