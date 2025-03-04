@@ -18,7 +18,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await SharedPreferncesSingleton.init();
   setupGetIt();
-  runApp(const FruitsHub());
+  runApp(const FruitsHub()); 
 }
 
 class FruitsHub extends StatelessWidget {

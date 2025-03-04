@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_appbar.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_button.dart';
+import 'package:fruits_hub/core/utils/widgets/custom_snack_bar.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_text_form_field.dart';
 import 'package:fruits_hub/features/Auth/presentation/manager/cubits/signup_cubit/signup_cubit.dart';
 import 'package:fruits_hub/features/Auth/presentation/views/widgets/auth_footer.dart';
@@ -24,6 +25,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late TextEditingController nameController;
+  late bool isTermsAccepted = false;
 
   @override
   void initState() {
@@ -65,18 +67,29 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 passwordController: passwordController,
               ),
               16.verticalSpace,
-              const CheckBoxAndTermConditions(),
+              CheckBoxAndTermConditions(
+                  // This method exits in the checkbox_and_termconditions.dart and i want to trrigger it
+                  onChanged: (value) {
+                isTermsAccepted = value;
+              }),
               30.verticalSpace,
               CustomButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-
-                    context.read<SignupCubit>().createUserWithEmailAndPassword(
-                          emailController.text,
-                          passwordController.text,
-                          nameController.text,
-                        );
+                    if (isTermsAccepted) {
+                      context.read<SignupCubit>().createUserWithEmailAndPassword(
+                            emailController.text,
+                            passwordController.text,
+                            nameController.text,
+                          );
+                    } else {
+                      CustomSnackBar.show(
+                        context,
+                        message: "You must accept the Terms and Conditions",
+                        isSuccess: false,
+                      );
+                    }
                   } else {
                     setState(() {
                       autovalidateMode = AutovalidateMode.always;
