@@ -4,7 +4,7 @@ import 'package:fruits_hub/constant.dart';
 
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_button.dart';
-import 'package:fruits_hub/features/Auth/presentation/views/login_view.dart';
+import 'package:fruits_hub/features/Auth/presentation/views/sign_in_view.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -62,7 +62,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: kPadding1, vertical: 20),
             child: CustomButton(
               onPressed: () {
-                Navigator.pushReplacementNamed(context, LoginView.routeName);
+                Navigator.pushReplacementNamed(context, SignInView.routeName);
               },
               text: S.of(context).StartNow,
             ),

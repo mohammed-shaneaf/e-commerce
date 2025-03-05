@@ -8,14 +8,14 @@ import 'package:fruits_hub/features/Auth/presentation/views/widgets/auth_text_fi
 import 'package:fruits_hub/features/Auth/presentation/views/widgets/forget_password_text.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
-class LoginViewBody extends StatefulWidget {
-  const LoginViewBody({super.key});
+class SignInViewBody extends StatefulWidget {
+  const SignInViewBody({super.key});
 
   @override
-  State<LoginViewBody> createState() => _LoginViewBodyState();
+  State<SignInViewBody> createState() => _SignInViewBodyState();
 }
 
-class _LoginViewBodyState extends State<LoginViewBody> {
+class _SignInViewBodyState extends State<SignInViewBody> {
   late TextEditingController emailController;
   late TextEditingController passwordController;
 
