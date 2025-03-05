@@ -18,4 +18,19 @@ class FirebaseAuthServices {
       throw CustomAuthException.fromFirebaseAuthException(e.code);
     }
   }
+
+  Future<User?> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      UserCredential userCredential = await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return userCredential.user;
+    } on FirebaseAuthException catch (e) {
+      throw CustomAuthException.fromFirebaseAuthException(e.code);
+    }
+  }
 }
