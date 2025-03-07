@@ -25,7 +25,12 @@ class AuthSocialButtons extends StatelessWidget {
         16.verticalSpace,
         SocialButton(title: S.of(context).SignInWithApple, image: Assets.imagesAppleicon, onpressed: () {}),
         16.verticalSpace,
-        SocialButton(title: S.of(context).SignInWithFecebook, image: Assets.imagesFecebookicon, onpressed: () {}),
+        SocialButton(
+            title: S.of(context).SignInWithFecebook,
+            image: Assets.imagesFecebookicon,
+            onpressed: () {
+              context.read<SigninCubit>().signInWithFecebook();
+            }),
         66.verticalSpace,
       ],
     );

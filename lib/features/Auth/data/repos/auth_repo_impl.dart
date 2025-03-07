@@ -59,4 +59,22 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure("حدث خطأ غير متوقع، يرجى المحاولة لاحقًا"));
     }
   }
+
+  Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+    try {
+      final userCredential = await firebaseAuthServices.signInWithFacebook();
+
+      if (userCredential == null) {
+        return left(ServerFailure("فشل تسجيل الدخول عبر فيسبوك"));
+      }
+      final userEntity = UserModel.fromFirebaseUser(userCredential.user!);
+
+      return right(userEntity);
+    } on CustomAuthException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('Exception in AuthRepoImpl.signInWithFacebook: ${e.toString()}');
+      return left(ServerFailure("حدث خطأ غير متوقع، يرجى المحاولة لاحقًا"));
+    }
+  }
 }
