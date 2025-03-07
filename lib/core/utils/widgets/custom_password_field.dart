@@ -11,7 +11,7 @@ class PasswordField extends StatefulWidget {
   });
 
   final TextEditingController passwordController;
-  final void Function(String)? onSaved;
+  final void Function(String?)? onSaved;
 
   @override
   _PasswordFieldState createState() => _PasswordFieldState();
@@ -21,6 +21,7 @@ class _PasswordFieldState extends State<PasswordField> {
   bool obscureText = true;
 
   double getPasswordStrength(String password) {
+    if (password.isEmpty) return 0.0;
     double strength = 0.0;
     if (password.length >= 8) strength += 0.3;
     if (RegExp(r'[A-Z]').hasMatch(password)) strength += 0.3;
@@ -35,6 +36,7 @@ class _PasswordFieldState extends State<PasswordField> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CustomTextFormField(
+          onSaved: widget.onSaved,
           obscureText: obscureText,
           controller: widget.passwordController,
           hintText: S.of(context).Password,
@@ -49,9 +51,12 @@ class _PasswordFieldState extends State<PasswordField> {
               padding: EdgeInsets.symmetric(horizontal: 31.w),
               child: AnimatedSwitcher(
                 duration: Duration(milliseconds: 400),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
                 child: Icon(
-                  obscureText ? Icons.remove_red_eye : Icons.visibility_off,
-                  key: ValueKey(obscureText),
+                  obscureText ? Icons.visibility : Icons.visibility_off,
+                  key: ValueKey<bool>(obscureText),
                   color: Color(0xffC9CECF),
                 ),
               ),

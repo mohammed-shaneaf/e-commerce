@@ -1,6 +1,8 @@
 import 'package:fruits_hub/features/Auth/domain/entities/user_entity.dart';
 
-abstract class SigninState {}
+abstract class SigninState {
+  get errMessage => null;
+}
 
 final class SigninInitial extends SigninState {}
 
