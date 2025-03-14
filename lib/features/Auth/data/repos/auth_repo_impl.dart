@@ -87,10 +87,4 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity user}) async {
     await databaseService.addData(BackendEndpoints.addUserData, user.toMap());
   }
-
-  @override
-  Future addData({required UserEntity user}) {
-    // TODO: implement addData
-    throw UnimplementedError();
-  }
 }
