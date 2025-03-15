@@ -1,5 +1,4 @@
-import 'dart:nativewrappers/_internal/vm/lib/developer.dart';
-
+import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruits_hub/core/errors/custom_auth_exceptions_firebase.dart';

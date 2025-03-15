@@ -62,15 +62,16 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(String email, String password) async {
     try {
-
       // i need to fetch the data from user
       var user = await firebaseAuthServices.signInWithEmailAndPassword(email: email, password: password);
+
+      var userEntity = await getUserData(uId: user!.uid);
 
       if (user == null) {
         return left(ServerFailure("المستخدم غير موجود أو كلمة المرور غير صحيحة"));
       }
 
-      return right(UserModel.fromFirebaseUser(user));
+      return right(userEntity);
     } on CustomAuthException catch (e) {
       return left(ServerFailure(e.message));
     } catch (e) {
@@ -116,12 +117,18 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity user}) async {
     for (int i = 0; i < 3; i++) {
       try {
-        await databaseService.addData(BackendEndpoints.addUserData, user.toMap());
+        await databaseService.addData(BackendEndpoints.addUserData, user.toMap(), user.uId);
         return; // Success, exit the function
       } catch (e) {
         if (i == 2) rethrow; // Last attempt failed, propagate the error
         await Future.delayed(Duration(seconds: 1)); // Wait before retrying
       }
     }
+  }
+
+  @override
+  Future<UserEntity> getUserData({required String uId}) async {
+    var userData = await databaseService.getData(path: BackendEndpoints.getUserData, documentId: uId);
+    return UserModel.fromJson(userData);
   }
 }

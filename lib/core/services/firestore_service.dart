@@ -6,8 +6,12 @@ import 'package:fruits_hub/features/Auth/domain/entities/user_entity.dart';
 class FirestoreService implements DatabaseService {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   @override
-  Future<void> addData(String path, Map<String, dynamic> data) async {
-    await firestore.collection(path).add(data);
+  Future<void> addData(String path, Map<String, dynamic> data, String? documentId) async {
+    if (documentId != null) {
+      await firestore.collection(path).doc(documentId).set(data);
+    } else {
+      await firestore.collection(path).add(data);
+    }
   }
 
   @override
