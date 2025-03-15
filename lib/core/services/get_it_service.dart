@@ -15,6 +15,6 @@ void setupGetIt() {
   getIt.registerLazySingleton<FirebaseAuthServices>(() => FirebaseAuthServices());
   getIt.registerSingleton<AuthRepo>(AuthRepoImpl(
     firebaseAuthServices: getIt<FirebaseAuthServices>(),
-    databaseService:  getIt<FirestoreService>(),
+    databaseService: getIt<DatabaseService>(),
   ));
 }

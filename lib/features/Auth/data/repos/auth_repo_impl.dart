@@ -16,22 +16,39 @@ class AuthRepoImpl extends AuthRepo {
   AuthRepoImpl({required this.firebaseAuthServices, required this.databaseService});
 
   @override
+
+  // Current Behavior
+  //*In your createUserWithEmailAndPassword method, Firebase Authentication creates the user first (firebaseAuthServices.createUserWithEmailAndPassword).
+  //* Then, it saves the user data to Firestore (addUserData).
+  //* If the Firestore operation fails (e.g., due to network issues or permissions), the Firebase Authentication user still exists, but the Firestore document does not.
+  //* When the user tries to register again with the same email, Firebase Authentication rejects it because the email is already in use.
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(String email, String password, String name) async {
     try {
-      var user = await firebaseAuthServices.createUserWithEmailAndPassword(email: email, password: password);
+      // Step 1: Create user in Firebase Authentication
+      var user = await firebaseAuthServices.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      // Step 2: Attempt to save user data to Firestore
       var userEntity = UserModel.fromFirebaseUser(user!);
-      await addUserData(user: userEntity);
+      try {
+        await addUserData(user: userEntity);
+      } catch (e) {
+        // Step 3: If Firestore save fails, delete the Firebase Authentication user
+        log('Failed to save user data to Firestore: ${e.toString()}');
+        await firebaseAuthServices.deleteUser(); // Call the deleteUser method
+        return left(ServerFailure("فشل في حفظ بيانات المستخدم، تم إلغاء إنشاء الحساب"));
+      }
+
+      // Step 4: If everything succeeds, return the user entity
       return right(userEntity);
     } on CustomAuthException catch (e) {
       return left(ServerFailure(e.message));
     } catch (e) {
       await Future.delayed(Duration(seconds: 1));
-
       log('Exception in AuthRepoImpl.createUserWithEmailAndPassword: ${e.toString()}');
-
-      return left(
-        ServerFailure("لقد حدث خطأ ما، الرجاء المحاولة مرة أخرى"),
-      );
+      return left(ServerFailure("لقد حدث خطأ ما، الرجاء المحاولة مرة أخرى"));
     }
   }
 
@@ -82,9 +99,21 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure("حدث خطأ غير متوقع، يرجى المحاولة لاحقًا"));
     }
   }
+  
+
+  //Netwrok Issue
+  //f the Firestore failure is due to a temporary network issue, you might consider retrying the addUserData operation before deleting the user. For example:
 
   @override
   Future addUserData({required UserEntity user}) async {
-    await databaseService.addData(BackendEndpoints.addUserData, user.toMap());
+    for (int i = 0; i < 3; i++) {
+      try {
+        await databaseService.addData(BackendEndpoints.addUserData, user.toMap());
+        return; // Success, exit the function
+      } catch (e) {
+        if (i == 2) rethrow; // Last attempt failed, propagate the error
+        await Future.delayed(Duration(seconds: 1)); // Wait before retrying
+      }
+    }
   }
 }

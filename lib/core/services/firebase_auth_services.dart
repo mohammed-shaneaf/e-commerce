@@ -1,3 +1,5 @@
+import 'dart:nativewrappers/_internal/vm/lib/developer.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:fruits_hub/core/errors/custom_auth_exceptions_firebase.dart';
@@ -5,6 +7,15 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class FirebaseAuthServices {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  Future deleteUser() async {
+    try {
+      await _firebaseAuth.currentUser!.delete();
+    } catch (e) {
+      log('Error deleting user: ${e.toString()}');
+      rethrow; // Handle this in the repo if needed
+    }
+  }
 
   Future<User?> createUserWithEmailAndPassword({
     required String email,
@@ -15,6 +26,11 @@ class FirebaseAuthServices {
         email: email,
         password: password,
       );
+
+      if (userCredential.user == null) {
+        throw CustomAuthException("فشل في إنشاء المستخدم.");
+      }
+
       return userCredential.user;
     } on FirebaseAuthException catch (e) {
       throw CustomAuthException.fromFirebaseAuthException(e.code);
