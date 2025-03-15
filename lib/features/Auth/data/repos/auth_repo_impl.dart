@@ -25,23 +25,30 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(String email, String password, String name) async {
     try {
       // Step 1: Create user in Firebase Authentication
-      var user = await firebaseAuthServices.createUserWithEmailAndPassword(
+      var firebaseUser = await firebaseAuthServices.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      // Step 2: Attempt to save user data to Firestore
-      var userEntity = UserModel.fromFirebaseUser(user!);
+      // Step 2: Create UserEntity directly with provided data
+      var userEntity = UserEntity(
+        uId: firebaseUser!.uid, // From Firebase Auth
+        email: email, // From method parameter
+        name: name, // From method parameter
+        // Add other fields like address if needed
+      );
+
+      // Step 3: Attempt to save user data to Firestore
       try {
         await addUserData(user: userEntity);
       } catch (e) {
-        // Step 3: If Firestore save fails, delete the Firebase Authentication user
+        // Step 4: If Firestore save fails, delete the Firebase Authentication user
         log('Failed to save user data to Firestore: ${e.toString()}');
-        await firebaseAuthServices.deleteUser(); // Call the deleteUser method
+        await firebaseAuthServices.deleteUser();
         return left(ServerFailure("فشل في حفظ بيانات المستخدم، تم إلغاء إنشاء الحساب"));
       }
 
-      // Step 4: If everything succeeds, return the user entity
+      // Step 5: If everything succeeds, return the user entity
       return right(userEntity);
     } on CustomAuthException catch (e) {
       return left(ServerFailure(e.message));
@@ -99,7 +106,6 @@ class AuthRepoImpl extends AuthRepo {
       return left(ServerFailure("حدث خطأ غير متوقع، يرجى المحاولة لاحقًا"));
     }
   }
-  
 
   //Netwrok Issue
   //f the Firestore failure is due to a temporary network issue, you might consider retrying the addUserData operation before deleting the user. For example:
