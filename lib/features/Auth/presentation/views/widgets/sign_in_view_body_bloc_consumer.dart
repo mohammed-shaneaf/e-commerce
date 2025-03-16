@@ -4,6 +4,7 @@ import 'package:fruits_hub/core/utils/widgets/custom_snack_bar.dart';
 import 'package:fruits_hub/features/Auth/presentation/manager/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruits_hub/features/Auth/presentation/manager/cubits/signin_cubit/signin_state.dart';
 import 'package:fruits_hub/features/Auth/presentation/views/widgets/sign_in_view_body.dart';
+import 'package:fruits_hub/features/home/presentation/views/home_view.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class SignInViewBodyBlocConsumer extends StatelessWidget {
@@ -15,6 +16,7 @@ class SignInViewBodyBlocConsumer extends StatelessWidget {
       listener: (context, state) {
         if (state is SigninSuccess) {
           CustomSnackBar.show(context, message: "تم تسجيل الدخول بنجاح!", isSuccess: true);
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
         } else if (state is SigninFaliure) {
           CustomSnackBar.show(context, message: state.errMessage, isSuccess: false);
         }
