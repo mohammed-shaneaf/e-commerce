@@ -23,9 +23,16 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       obscureText: obscureText,
       controller: controller,
-      onSaved: onSaved,
+      onSaved: (value) {
+        // Trim the value before passing it to onSaved callback
+        if (onSaved != null && value != null) {
+          onSaved!(value.trim());
+        }
+      },
       validator: (value) {
-        if (value == null || value.isEmpty) {
+        // Trim the value before validation
+        final trimmedValue = value?.trim();
+        if (trimmedValue == null || trimmedValue.isEmpty) {
           return 'هذا الحقل مطلوب';
         }
         return null;
