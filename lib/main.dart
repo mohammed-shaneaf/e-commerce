@@ -9,6 +9,7 @@ import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/services/shared_prefernces_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/features/Splash/presentation/views/splash_view.dart';
+import 'package:fruits_hub/features/home/presentation/views/home_view.dart';
 import 'package:fruits_hub/firebase_options.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
@@ -18,7 +19,7 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await SharedPreferncesSingleton.init();
   setupGetIt();
-  runApp(const FruitsHub()); 
+  runApp(const FruitsHub());
 }
 
 class FruitsHub extends StatelessWidget {
@@ -49,7 +50,7 @@ class FruitsHub extends StatelessWidget {
         supportedLocales: S.delegate.supportedLocales,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: onGenerateRoute,
-        initialRoute: SplashView.routeName,
+        initialRoute: HomeView.routeName,
       ),
     );
   }

@@ -18,6 +18,10 @@ class Assets {
   /// assets/images/fecebookicon.svg
   static const String imagesFecebookicon = "assets/images/fecebookicon.svg";
 
+  /// Assets for imagesFilterIcon
+  /// assets/images/filter_icon.svg
+  static const String imagesFilterIcon = "assets/images/filter_icon.svg";
+
   /// Assets for imagesGoogleicon
   /// assets/images/googleicon.svg
   static const String imagesGoogleicon = "assets/images/googleicon.svg";
@@ -25,6 +29,10 @@ class Assets {
   /// Assets for imagesLogo
   /// assets/images/logo.svg
   static const String imagesLogo = "assets/images/logo.svg";
+
+  /// Assets for imagesNotifications
+  /// assets/images/notifications.svg
+  static const String imagesNotifications = "assets/images/notifications.svg";
 
   /// Assets for imagesPageViewItem1BackgroundImage
   /// assets/images/page_view_item1_backgroundImage.svg
@@ -45,6 +53,14 @@ class Assets {
   /// Assets for imagesPlant
   /// assets/images/plant.svg
   static const String imagesPlant = "assets/images/plant.svg";
+
+  /// Assets for imagesProfileImage
+  /// assets/images/profile_image.png
+  static const String imagesProfileImage = "assets/images/profile_image.png";
+
+  /// Assets for imagesSearchIcon
+  /// assets/images/search_icon.svg
+  static const String imagesSearchIcon = "assets/images/search_icon.svg";
 
   /// Assets for imagesSplashButton
   /// assets/images/splash_button.svg
