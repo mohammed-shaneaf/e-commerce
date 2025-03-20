@@ -289,6 +289,11 @@ class S {
   String get More {
     return Intl.message('More', name: 'More', desc: '', args: []);
   }
+
+  /// `watermelon`
+  String get Watermelon {
+    return Intl.message('watermelon', name: 'Watermelon', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -66,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "SignInWithGoogle",
     ),
     "StartNow": MessageLookupByLibrary.simpleMessage("StartNow"),
+    "Watermelon": MessageLookupByLibrary.simpleMessage("watermelon"),
     "YoualreadyhaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "You already Have An Account ?",
     ),

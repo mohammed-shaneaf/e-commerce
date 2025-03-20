@@ -59,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تسجيل بواسطة جوجل",
     ),
     "StartNow": MessageLookupByLibrary.simpleMessage("ابدأ الان"),
+    "Watermelon": MessageLookupByLibrary.simpleMessage("بطيخ"),
     "YoualreadyhaveAnAccount": MessageLookupByLibrary.simpleMessage(
       " تمتلك حساب بالفعل؟",
     ),
