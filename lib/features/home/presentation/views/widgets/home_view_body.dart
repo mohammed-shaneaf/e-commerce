@@ -4,6 +4,7 @@ import 'package:fruits_hub/constant.dart';
 import 'package:fruits_hub/core/utils/search_text_field.dart';
 import 'package:fruits_hub/features/home/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:fruits_hub/features/home/presentation/views/widgets/featured_item.dart';
+import 'package:fruits_hub/features/home/presentation/views/widgets/featured_list.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -21,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                 16.verticalSpace,
                 SearchTextField(),
                 12.verticalSpace,
-                FeaturedItem(),
+                FeaturedList(),
               ],
             ),
           ),
