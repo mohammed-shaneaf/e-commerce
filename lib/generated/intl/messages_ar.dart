@@ -28,9 +28,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CreateAnAccount": MessageLookupByLibrary.simpleMessage("قم بإنشاء حساب"),
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "Discount25": MessageLookupByLibrary.simpleMessage("خصم 25%"),
     "DoNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "لا تمتلك حساب ؟",
     ),
+    "Eidoffer": MessageLookupByLibrary.simpleMessage("عروض العيد"),
     "Email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "ForgetYourPassword": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور ؟",
@@ -60,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
       " تمتلك حساب بالفعل؟",
     ),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
+    "shoppingNow": MessageLookupByLibrary.simpleMessage("تسوق الان"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
     "title": MessageLookupByLibrary.simpleMessage("مرحبا بك في"),
   };

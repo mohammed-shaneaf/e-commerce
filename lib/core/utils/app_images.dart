@@ -14,6 +14,14 @@ class Assets {
   /// assets/images/checkicon.svg
   static const String imagesCheckicon = "assets/images/checkicon.svg";
 
+  /// Assets for imagesFeaturedItem
+  /// assets/images/featured_item.png
+  static const String imagesFeaturedItem = "assets/images/featured_item.png";
+
+  /// Assets for imagesFeaturedItemBackground
+  /// assets/images/featured_item_background.svg
+  static const String imagesFeaturedItemBackground = "assets/images/featured_item_background.svg";
+
   /// Assets for imagesFecebookicon
   /// assets/images/fecebookicon.svg
   static const String imagesFecebookicon = "assets/images/fecebookicon.svg";

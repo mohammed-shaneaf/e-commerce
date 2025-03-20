@@ -32,9 +32,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateNewAccount": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
     ),
+    "Discount25": MessageLookupByLibrary.simpleMessage("25% Discount"),
     "DoNotHaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "Do Not Have An Account ?",
     ),
+    "Eidoffer": MessageLookupByLibrary.simpleMessage("Eid offer"),
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
     "ForgetYourPassword": MessageLookupByLibrary.simpleMessage(
       "ForgetYourPassword ?",
@@ -67,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You already Have An Account ?",
     ),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("search and shop"),
+    "shoppingNow": MessageLookupByLibrary.simpleMessage("Shopping now"),
     "skip": MessageLookupByLibrary.simpleMessage("skip"),
     "title": MessageLookupByLibrary.simpleMessage("Welcome To You"),
   };

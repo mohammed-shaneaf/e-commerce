@@ -20,7 +20,6 @@ class SearchTextField extends StatelessWidget {
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
           fillColor: Colors.transparent,
-          filled: true,
         ),
       ),
     );
