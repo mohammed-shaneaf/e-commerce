@@ -279,6 +279,16 @@ class S {
       args: [],
     );
   }
+
+  /// `best seller`
+  String get bestseller {
+    return Intl.message('best seller', name: 'bestseller', desc: '', args: []);
+  }
+
+  /// `More`
+  String get More {
+    return Intl.message('More', name: 'More', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

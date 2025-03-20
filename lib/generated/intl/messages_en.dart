@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FullName": MessageLookupByLibrary.simpleMessage("Full Name"),
     "GoodMorning": MessageLookupByLibrary.simpleMessage("GoodMorning"),
     "Login": MessageLookupByLibrary.simpleMessage("Login"),
+    "More": MessageLookupByLibrary.simpleMessage("More"),
     "NewAccount": MessageLookupByLibrary.simpleMessage("Create New Account"),
     "OnBoardingSubTitle1": MessageLookupByLibrary.simpleMessage(
       "Discover a unique shopping experience with FruitHUB. Explore our wide range of premium fresh fruits and get the best deals and high quality",
@@ -68,6 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "YoualreadyhaveAnAccount": MessageLookupByLibrary.simpleMessage(
       "You already Have An Account ?",
     ),
+    "bestseller": MessageLookupByLibrary.simpleMessage("best seller"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("search and shop"),
     "shoppingNow": MessageLookupByLibrary.simpleMessage("Shopping now"),
     "skip": MessageLookupByLibrary.simpleMessage("skip"),

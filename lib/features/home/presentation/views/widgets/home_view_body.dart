@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruits_hub/constant.dart';
 import 'package:fruits_hub/core/utils/search_text_field.dart';
+import 'package:fruits_hub/features/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fruits_hub/features/home/presentation/views/widgets/custom_home_app_bar.dart';
-import 'package:fruits_hub/features/home/presentation/views/widgets/featured_item.dart';
 import 'package:fruits_hub/features/home/presentation/views/widgets/featured_list.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -23,6 +22,8 @@ class HomeViewBody extends StatelessWidget {
                 SearchTextField(),
                 12.verticalSpace,
                 FeaturedList(),
+                12.verticalSpace,
+                BestSellingHeader(),
               ],
             ),
           ),

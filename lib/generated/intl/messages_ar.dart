@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FullName": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
     "GoodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير"),
     "Login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "More": MessageLookupByLibrary.simpleMessage("المزيد"),
     "NewAccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
     "OnBoardingSubTitle1": MessageLookupByLibrary.simpleMessage(
       "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
@@ -61,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "YoualreadyhaveAnAccount": MessageLookupByLibrary.simpleMessage(
       " تمتلك حساب بالفعل؟",
     ),
+    "bestseller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
     "searchAndShop": MessageLookupByLibrary.simpleMessage("ابحث وتسوق"),
     "shoppingNow": MessageLookupByLibrary.simpleMessage("تسوق الان"),
     "skip": MessageLookupByLibrary.simpleMessage("تخط"),
