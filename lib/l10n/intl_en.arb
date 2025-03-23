@@ -29,7 +29,12 @@
     "shoppingNow" : "Shopping now",
     "bestseller" : "best seller",
     "More" : "More",
-    "Watermelon" : "watermelon"
+    "Watermelon" : "watermelon",
+    "home" : "home",
+    "profile" : "profile",
+    "cart" : "cart",
+    "products" : "products"
+   
 
     
 

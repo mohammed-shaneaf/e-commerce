@@ -29,7 +29,12 @@
     "shoppingNow" : "تسوق الان",
     "bestseller" : "الأكثر مبيعًا",
     "More" : "المزيد",
-    "Watermelon" : "بطيخ"
+    "Watermelon" : "بطيخ",
+    "home" : "الرئيسية",
+    "profile" : "حسابي",
+    "cart" : "سلة التسوق",
+    "products" : "المنتجات "
+   
 
 
 }    

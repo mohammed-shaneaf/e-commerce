@@ -10,6 +10,22 @@ class Assets {
   /// assets/images/appleicon.svg
   static const String imagesAppleicon = "assets/images/appleicon.svg";
 
+  /// Assets for imagesBoldHomeSelected
+  /// assets/images/bold/home_selected.svg
+  static const String imagesBoldHomeSelected = "assets/images/bold/home_selected.svg";
+
+  /// Assets for imagesBoldProductsSelected
+  /// assets/images/bold/products_selected.svg
+  static const String imagesBoldProductsSelected = "assets/images/bold/products_selected.svg";
+
+  /// Assets for imagesBoldShoppingCartSelected
+  /// assets/images/bold/shopping_cart_selected.svg
+  static const String imagesBoldShoppingCartSelected = "assets/images/bold/shopping_cart_selected.svg";
+
+  /// Assets for imagesBoldUserSelected
+  /// assets/images/bold/user_selected.svg
+  static const String imagesBoldUserSelected = "assets/images/bold/user_selected.svg";
+
   /// Assets for imagesCheckicon
   /// assets/images/checkicon.svg
   static const String imagesCheckicon = "assets/images/checkicon.svg";
@@ -41,6 +57,22 @@ class Assets {
   /// Assets for imagesNotifications
   /// assets/images/notifications.svg
   static const String imagesNotifications = "assets/images/notifications.svg";
+
+  /// Assets for imagesOutlineHomeUnSelected
+  /// assets/images/outline/home_un_selected.svg
+  static const String imagesOutlineHomeUnSelected = "assets/images/outline/home_un_selected.svg";
+
+  /// Assets for imagesOutlineProductsUnSelected
+  /// assets/images/outline/products_un_selected.svg
+  static const String imagesOutlineProductsUnSelected = "assets/images/outline/products_un_selected.svg";
+
+  /// Assets for imagesOutlineShoppingCartUnSelcted
+  /// assets/images/outline/shopping_cart_un_selcted.svg
+  static const String imagesOutlineShoppingCartUnSelcted = "assets/images/outline/shopping_cart_un_selcted.svg";
+
+  /// Assets for imagesOutlineUserUnSelected
+  /// assets/images/outline/user_un_selected.svg
+  static const String imagesOutlineUserUnSelected = "assets/images/outline/user_un_selected.svg";
 
   /// Assets for imagesPageViewItem1BackgroundImage
   /// assets/images/page_view_item1_backgroundImage.svg

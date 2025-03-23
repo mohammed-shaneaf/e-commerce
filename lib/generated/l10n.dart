@@ -294,6 +294,26 @@ class S {
   String get Watermelon {
     return Intl.message('watermelon', name: 'Watermelon', desc: '', args: []);
   }
+
+  /// `home`
+  String get home {
+    return Intl.message('home', name: 'home', desc: '', args: []);
+  }
+
+  /// `profile`
+  String get profile {
+    return Intl.message('profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `cart`
+  String get cart {
+    return Intl.message('cart', name: 'cart', desc: '', args: []);
+  }
+
+  /// `products`
+  String get products {
+    return Intl.message('products', name: 'products', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

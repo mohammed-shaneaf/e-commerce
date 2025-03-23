@@ -8,7 +8,6 @@ import 'package:fruits_hub/core/services/custom_bloc_observer.dart';
 import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/services/shared_prefernces_singleton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/features/Splash/presentation/views/splash_view.dart';
 import 'package:fruits_hub/features/home/presentation/views/home_view.dart';
 import 'package:fruits_hub/firebase_options.dart';
 import 'package:fruits_hub/generated/l10n.dart';
@@ -26,11 +25,6 @@ class FruitsHub extends StatelessWidget {
   const FruitsHub({super.key});
 
   @override
-
-  /// Builds the main widget tree for the FruitsHub app.
-  ///
-  /// This method initializes the `ScreenUtil` with a design size and returns
-  /// a `MaterialApp` configured with the app's theme, locale, localization
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(812, 375),
