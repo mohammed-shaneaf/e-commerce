@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:fruits_hub/core/utils/widgets/custom_notfication.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 class CustomHomeAppBar extends StatelessWidget {
@@ -22,10 +23,7 @@ class CustomHomeAppBar extends StatelessWidget {
         S.of(context).AhmadMoustafa,
         style: AppTextStyles.bold16,
       ),
-      trailing: SvgPicture.asset(
-        Assets.imagesNotifications,
-        width: 80.w,
-      ),
+      trailing: CustomNotificationWidget(),
     );
   }
 }

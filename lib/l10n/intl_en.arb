@@ -33,7 +33,8 @@
     "home" : "home",
     "profile" : "profile",
     "cart" : "cart",
-    "products" : "products"
+    "products" : "products",
+    "BestSelling": "Best Selling"
    
 
     

@@ -314,6 +314,16 @@ class S {
   String get products {
     return Intl.message('products', name: 'products', desc: '', args: []);
   }
+
+  /// `Best Selling`
+  String get BestSelling {
+    return Intl.message(
+      'Best Selling',
+      name: 'BestSelling',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
