@@ -1,9 +1,13 @@
+import 'dart:convert';
 import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
+import 'package:fruits_hub/constant.dart';
 import 'package:fruits_hub/core/errors/custom_auth_exceptions_firebase.dart';
 import 'package:fruits_hub/core/errors/faliure.dart';
 import 'package:fruits_hub/core/services/data_base_service.dart';
 import 'package:fruits_hub/core/services/firebase_auth_services.dart';
+import 'package:fruits_hub/core/services/shared_prefernces_singleton.dart';
 import 'package:fruits_hub/core/utils/backend_endpoints.dart';
 import 'package:fruits_hub/features/Auth/data/models/user_model.dart';
 import 'package:fruits_hub/features/Auth/domain/entities/user_entity.dart';
@@ -13,7 +17,8 @@ class AuthRepoImpl extends AuthRepo {
   final FirebaseAuthServices firebaseAuthServices;
   final DatabaseService databaseService;
 
-  AuthRepoImpl({required this.firebaseAuthServices, required this.databaseService});
+  AuthRepoImpl(
+      {required this.firebaseAuthServices, required this.databaseService});
 
   @override
 
@@ -22,10 +27,12 @@ class AuthRepoImpl extends AuthRepo {
   //* Then, it saves the user data to Firestore (addUserData).
   //* If the Firestore operation fails (e.g., due to network issues or permissions), the Firebase Authentication user still exists, but the Firestore document does not.
   //* When the user tries to register again with the same email, Firebase Authentication rejects it because the email is already in use.
-  Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(String email, String password, String name) async {
+  Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
+      String email, String password, String name) async {
     try {
       // Step 1: Create user in Firebase Authentication
-      var firebaseUser = await firebaseAuthServices.createUserWithEmailAndPassword(
+      var firebaseUser =
+          await firebaseAuthServices.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -45,7 +52,8 @@ class AuthRepoImpl extends AuthRepo {
         // Step 4: If Firestore save fails, delete the Firebase Authentication user
         log('Failed to save user data to Firestore: ${e.toString()}');
         await firebaseAuthServices.deleteUser();
-        return left(ServerFailure("فشل في حفظ بيانات المستخدم، تم إلغاء إنشاء الحساب"));
+        return left(
+            ServerFailure("فشل في حفظ بيانات المستخدم، تم إلغاء إنشاء الحساب"));
       }
 
       // Step 5: If everything succeeds, return the user entity
@@ -60,16 +68,14 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(String email, String password) async {
+  Future<Either<Failure, UserEntity>> signInWithEmailAndPassword(
+      String email, String password) async {
     try {
       // i need to fetch the data from user
-      var user = await firebaseAuthServices.signInWithEmailAndPassword(email: email, password: password);
+      var user = await firebaseAuthServices.signInWithEmailAndPassword(
+          email: email, password: password);
 
       var userEntity = await getUserData(uId: user!.uid);
-
-      if (user == null) {
-        return left(ServerFailure("المستخدم غير موجود أو كلمة المرور غير صحيحة"));
-      }
 
       return right(userEntity);
     } on CustomAuthException catch (e) {
@@ -92,6 +98,7 @@ class AuthRepoImpl extends AuthRepo {
     }
   }
 
+  @override
   Future<Either<Failure, UserEntity>> signInWithFacebook() async {
     try {
       final userCredential = await firebaseAuthServices.signInWithFacebook();
@@ -117,7 +124,8 @@ class AuthRepoImpl extends AuthRepo {
   Future addUserData({required UserEntity user}) async {
     for (int i = 0; i < 3; i++) {
       try {
-        await databaseService.addData(BackendEndpoints.addUserData, user.toMap(), user.uId);
+        await databaseService.addData(BackendEndpoints.addUserData,
+            UserModel.fromEntity(user).toMap(), user.uId);
         return; // Success, exit the function
       } catch (e) {
         if (i == 2) rethrow; // Last attempt failed, propagate the error
@@ -128,7 +136,15 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<UserEntity> getUserData({required String uId}) async {
-    var userData = await databaseService.getData(path: BackendEndpoints.getUserData, documentId: uId);
+    var userData = await databaseService.getData(
+        path: BackendEndpoints.getUserData, documentId: uId);
     return UserModel.fromJson(userData);
+  }
+
+  @override
+  Future saveUserData({required UserEntity user}) async {
+    var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
+
+    await SharedPreferncesSingleton.setString(kUserData, jsonData);
   }
 }

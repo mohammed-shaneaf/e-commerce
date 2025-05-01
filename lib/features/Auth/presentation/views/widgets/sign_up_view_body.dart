@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruits_hub/core/utils/widgets/custom_appbar.dart';
+import 'package:fruits_hub/core/helper/build_app_bar.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_snack_bar.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_text_form_field.dart';
@@ -78,7 +78,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                     if (isTermsAccepted) {
-                      context.read<SignupCubit>().createUserWithEmailAndPassword(
+                      context
+                          .read<SignupCubit>()
+                          .createUserWithEmailAndPassword(
                             emailController.text,
                             passwordController.text,
                             nameController.text,
