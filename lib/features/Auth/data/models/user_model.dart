@@ -48,6 +48,14 @@ class UserModel extends UserEntity {
     );
   }
 
+  UserEntity toEntity() {
+    return UserEntity(
+      name: name,
+      email: email,
+      uId: uId,
+    );
+  }
+
   @override
   String toString() {
     return 'UserModel(name: $name, email: $email, uId: $uId)';

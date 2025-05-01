@@ -4,7 +4,6 @@ import 'package:fruits_hub/constant.dart';
 import 'package:fruits_hub/core/services/shared_prefernces_singleton.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/features/Auth/presentation/views/sign_in_view.dart';
-import 'package:fruits_hub/features/on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -32,7 +31,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
-            mainAxisAlignment: isRtl ? MainAxisAlignment.end : MainAxisAlignment.start,
+            mainAxisAlignment:
+                isRtl ? MainAxisAlignment.end : MainAxisAlignment.start,
             children: [
               SvgPicture.asset(Assets.imagesPlant),
             ],
@@ -49,12 +49,13 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   void executeNavigation() {
     Future.delayed(const Duration(seconds: 2), () {
-      bool isOnBoardingViewSeen = SharedPreferncesSingleton.getBool(kIsOnBoardingViewSeen);
+      bool isOnBoardingViewSeen =
+          SharedPreferncesSingleton.getBool(kIsOnBoardingViewSeen);
 
       if (isOnBoardingViewSeen) {
         Navigator.pushReplacementNamed(context, SignInView.routeName);
       } else {
-        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+        Navigator.pushReplacementNamed(context, SignInView.routeName);
       }
     });
   }

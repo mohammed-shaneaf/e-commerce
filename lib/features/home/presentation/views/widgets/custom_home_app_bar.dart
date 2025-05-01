@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_hub/core/helper/get_user.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/widgets/custom_notfication.dart';
@@ -20,7 +19,7 @@ class CustomHomeAppBar extends StatelessWidget {
         Assets.imagesProfileImage,
       ),
       subtitle: Text(
-        S.of(context).AhmadMoustafa,
+        getUser().name,
         style: AppTextStyles.bold16,
       ),
       trailing: CustomNotificationWidget(),

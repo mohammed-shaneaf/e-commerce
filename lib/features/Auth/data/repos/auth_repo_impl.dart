@@ -76,6 +76,7 @@ class AuthRepoImpl extends AuthRepo {
           email: email, password: password);
 
       var userEntity = await getUserData(uId: user!.uid);
+      await saveUserData(user: userEntity);
 
       return right(userEntity);
     } on CustomAuthException catch (e) {
@@ -143,8 +144,11 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future saveUserData({required UserEntity user}) async {
-    var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
-
-    await SharedPreferncesSingleton.setString(kUserData, jsonData);
+    try {
+      var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
+      await SharedPreferncesSingleton.setString(kUserData, jsonData);
+    } catch (e) {
+      throw Exception('Failed to save user data: $e');
+    }
   }
 }
